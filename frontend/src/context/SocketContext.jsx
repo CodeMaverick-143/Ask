@@ -64,7 +64,7 @@ export const SocketProvider = ({ children }) => {
   const socket = useMemo(() => {
     try {
       // Try to connect to real socket server
-      const socketIo = io('http://localhost:3001', {
+      const socketIo = io(process.env.REACT_APP_SOCKET_ENDPOINT, {
         withCredentials: true,
         autoConnect: true,
         reconnectionAttempts: 3,
