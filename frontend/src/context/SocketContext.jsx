@@ -63,7 +63,6 @@ export const SocketProvider = ({ children }) => {
   // Create socket instance
   const socket = useMemo(() => {
     try {
-      console.log('Attempting to connect to socket endpoint:', import.meta.env.VITE_SOCKET_ENDPOINT);
       // Try to connect to real socket server
       const socketIo = io(import.meta.env.VITE_SOCKET_ENDPOINT, {
         withCredentials: true,
