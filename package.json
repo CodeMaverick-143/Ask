@@ -1,16 +1,17 @@
 {
     "name": "anonymous-question-asking-platform",
     "version": "1.0.0",
-    "private": true,
     "scripts": {
-      "install:frontend": "cd frontend && npm install",
-      "install:backend": "cd backend && npm install",
-      "install": "npm-run-all install:*",
-      "dev:frontend": "cd frontend && npm run dev",
-      "dev:backend": "cd backend && npm run dev",
-      "dev": "npm-run-all --parallel dev:*"
+        "start": "node server.js",
+        "build": "cd frontend && npm install && npm run build",
+        "dev": "npm-run-all --parallel \"cd frontend && npm run dev\" \"npm start\""
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "socket.io": "^4.8.1"
     },
     "devDependencies": {
-      "npm-run-all": "^4.1.5"
+        "npm-run-all": "^4.1.5"
     }
-  }
+}

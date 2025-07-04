@@ -64,12 +64,7 @@ export const SocketProvider = ({ children }) => {
   const socket = useMemo(() => {
     try {
       // Try to connect to real socket server
-      const socketIo = io(import.meta.env.VITE_SOCKET_ENDPOINT, {
-        withCredentials: true,
-        autoConnect: true,
-        reconnectionAttempts: 3,
-        reconnectionDelay: 1000,
-      });
+      const socketIo = io();
 
       const onConnect = () => {
         console.log('Connected to Socket.IO server');
